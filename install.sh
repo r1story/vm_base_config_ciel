@@ -2,6 +2,7 @@
 #============
 #
 #         SCRIPT DE CONFIGURATION
+#         version 1.2
 #
 #============
 
