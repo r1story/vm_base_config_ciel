@@ -38,5 +38,8 @@ echo "*** Phase 4 : Définition de quelques alias ***"
 sleep 2
 
 alias ll='ls -lah'
+echo "alias ll='ls -lah'"
 alias la='ls -A'
+echo "alias la='ls -A'"
 alias grep='grep --color-auto'
+echo "alias grep='grep --color-auto'"
