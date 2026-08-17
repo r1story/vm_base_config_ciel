@@ -44,12 +44,13 @@ passwd Ciel
 echo "*** Phase 4 : Définition de quelques alias pour l'utilisateur Ciel ***"
 sleep 2
 
-alias ll='ls -lah' >> /home/Ciel/.bashrc
-echo "alias ll=ls -lah"
-alias la='ls -A' >> /home/Ciel/.bashrc
-echo "alias la=ls -A"
-alias grep='grep --color=auto' >> /home/Ciel/.bashrc
-echo "alias grep=grep --color=auto"
+echo "alias ll='ls -lah'" >> /home/Ciel/.bashrc
+echo "Alias ll ajouté"
+echo "alias la='ls -A'" >> /home/Ciel/.bashrc
+echo "Alias la ajouté"
+echo "alias grep='grep --color=auto'" >> /home/Ciel/.bashrc
+echo "Alias grep coloré ajouté"
+
 
 #============
 
