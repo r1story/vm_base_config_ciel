@@ -5,6 +5,12 @@
 #
 #============
 
+if [ "$EUID" -ne 0 ]; then
+    echo "Erreur : le script doir être exécuté en root.
+    echo "Veuillez utiliser : sudo ./install.sh"
+    exit 1
+fi
+
 echo "*** Début du script de configuration ***"
 sleep 2
 
@@ -21,25 +27,25 @@ apt autoremove -y
 echo "*** Phase 2 : Installation des utilitaires de base ***"
 sleep 2
 
-apt install sudo curl wget nano tree zip unzip openssh-client openssh-server htop dnsutils
+apt install -y sudo curl wget nano tree zip unzip openssh-client openssh-server htop dnsutils
 
 #============
 
 echo "*** Phase 3 : Création de l'utilisateur Ciel ***"
 sleep 2
 
-useradd -m -G sudo Ciel
+useradd -m -s /bin/bash -G sudo Ciel
 echo "Définir le mot de passe de l'utilisateur Ciel :"
 passwd Ciel 
 
 #============
 
-echo "*** Phase 4 : Définition de quelques alias ***"
+echo "*** Phase 4 : Définition de quelques alias pour l'utilisateur Ciel ***"
 sleep 2
 
-alias ll='ls -lah'
+alias ll='ls -lah' >> /home/Ciel/.bashrc
 echo "alias ll='ls -lah'"
-alias la='ls -A'
+alias la='ls -A' >> /home/Ciel/.bashrc
 echo "alias la='ls -A'"
-alias grep='grep --color-auto'
-echo "alias grep='grep --color-auto'"
+alias grep='grep --color=auto' >> /home/Ciel/.bashrc
+echo "alias grep='grep --color=auto'"
