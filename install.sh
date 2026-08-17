@@ -6,7 +6,7 @@
 #============
 
 if [ "$EUID" -ne 0 ]; then
-    echo "Erreur : le script doir être exécuté en root.
+    echo "Erreur : le script doir être exécuté en root."
     echo "Veuillez utiliser : sudo ./install.sh"
     exit 1
 fi
