@@ -1,13 +1,13 @@
 #!/bin/bash
 #============
 #
-#         SCRIPT DE CONFIGURATION
-#         version 1.2
+#           SCRIPT DE CONFIGURATION
+#           version 1.2
 #
 #============
 
 if [ "$EUID" -ne 0 ]; then
-    echo "Erreur : le script doir être exécuté en root."
+    echo "Erreur : le script doit être exécuté en root."
     echo "Veuillez utiliser : sudo ./install.sh"
     exit 1
 fi
@@ -50,3 +50,11 @@ alias la='ls -A' >> /home/Ciel/.bashrc
 echo "alias la=ls -A"
 alias grep='grep --color=auto' >> /home/Ciel/.bashrc
 echo "alias grep=grep --color=auto"
+
+#============
+
+echo "*** Fin du script de configuration ***"
+echo "tips : activer OpenSSH-server avec 'systemctl enable --now ssh' "
+
+#           Fin du script
+#============
